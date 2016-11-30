@@ -3,11 +3,11 @@ package com.wang.so.love.android.app.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.wang.so.love.android.app.BaseActivity;
+import com.wang.so.love.android.app.utils.SharedPreferencesUtil;
 import com.wang.so.love.android.app.view.R;
 
 /**
@@ -27,15 +27,19 @@ public class MainActivity extends BaseActivity {
 		
 		this.checkGuidance();
 		this.initView();
-		finish();
+		
 	}
 	
 	/**
 	 * 检查是否刚安装APP,即是否需要进入引导页
 	 */
 	private void checkGuidance(){
-		Intent intent = new Intent(context, GuidanceActivity.class);
-		startActivity(intent);
+		boolean guidanceActivity = sharedPreferences.getBoolean(SharedPreferencesUtil.KEY_GUIDE_ACTIVITY, true);
+		if( guidanceActivity ){
+			Intent intent = new Intent(context, GuidanceActivity.class);
+			startActivity(intent);
+			finish();
+		} 
 	}
 	
 	/**

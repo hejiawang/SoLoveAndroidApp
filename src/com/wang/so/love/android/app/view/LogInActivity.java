@@ -3,7 +3,6 @@ package com.wang.so.love.android.app.view;
 import com.wang.so.love.android.app.BaseActivity;
 
 import android.os.Bundle;
-import android.view.Window;
 
 import com.wang.so.love.android.app.view.R;
 
