@@ -5,48 +5,40 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.wang.so.love.android.app.BaseActivity;
-import com.wang.so.love.android.app.utils.SharedPreferencesUtil;
 import com.wang.so.love.android.app.view.R;
 
 /**
- * Ö÷Ò³Ãæ
+ * ä¸»é¡µ
  * 
  * @author HeJiawang
  * @date 2016.11.29
  */
 public class MainActivity extends BaseActivity {
 	
+	private SlidingMenu mMenu;
+	
 	private Button button_login;
+	private ImageView tv_one;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-		this.checkGuidance();
 		this.initView();
-		
 	}
 	
 	/**
-	 * ¼ì²éÊÇ·ñ¸Õ°²×°APP,¼´ÊÇ·ñĞèÒª½øÈëÒıµ¼Ò³
-	 */
-	private void checkGuidance(){
-		boolean guidanceActivity = sharedPreferences.getBoolean(SharedPreferencesUtil.KEY_GUIDE_ACTIVITY, true);
-		if( guidanceActivity ){
-			Intent intent = new Intent(context, GuidanceActivity.class);
-			startActivity(intent);
-			finish();
-		} 
-	}
-	
-	/**
-	 * Ò³Ãæ³õÊ¼»¯
+	 * é¡µé¢åˆå§‹åŒ–
 	 */
 	private void initView(){
+		mMenu = (SlidingMenu) findViewById(R.id.id_menu);
+		
 		button_login = (Button) findViewById(R.id.button_login);
+		tv_one = (ImageView) findViewById(R.id.one);
 		
 		button_login.setOnClickListener(new OnClickListener() {
 
@@ -56,5 +48,22 @@ public class MainActivity extends BaseActivity {
 				startActivity(intent);
 			}
 		});
+		
+		tv_one.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, LogInActivity.class);
+				startActivity(intent);
+			}
+		});
+	}
+	
+	/**
+	 * ä¸»é¡µé¢ä¸Šçš„"åˆ‡æ¢æ»‘åŠ¨èœå•"çš„ç‚¹å‡»äº‹ä»¶
+	 * @param view
+	 */
+	public void toggleMenu(View view){
+		mMenu.toggle();
 	}
 }

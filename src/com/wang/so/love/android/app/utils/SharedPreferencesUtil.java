@@ -1,7 +1,7 @@
 package com.wang.so.love.android.app.utils;
 
 /**
- * SharedPreferences帮助类
+ * SharedPreferences util
  * 
  * @author HeJiawang
  * @date   2016.11.30
@@ -9,7 +9,7 @@ package com.wang.so.love.android.app.utils;
 public class SharedPreferencesUtil {
 	
 	/**
-	 * 是否需要进入引导页
+	 * 鏄惁闇�瑕佽繘鍏ュ紩瀵奸〉
 	 */
 	public static final String KEY_GUIDE_ACTIVITY = "guide_activity";
 	

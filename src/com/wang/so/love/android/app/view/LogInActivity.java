@@ -7,7 +7,7 @@ import android.os.Bundle;
 import com.wang.so.love.android.app.view.R;
 
 /**
- * µÇÂ½Ò³Ãæ
+ * ç™»é™†é¡µ
  * 
  * @author HeJiawang
  * @date 2016.11.29

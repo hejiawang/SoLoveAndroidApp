@@ -6,7 +6,7 @@ import android.os.Message;
 import android.widget.Toast;
 
 /**
- * Toast¹¤¾ß
+ * Toast
  * 
  * @author HeJiawang
  * @date 2016.11.29

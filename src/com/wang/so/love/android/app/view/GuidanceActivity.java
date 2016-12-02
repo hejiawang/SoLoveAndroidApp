@@ -17,7 +17,7 @@ import com.wang.so.love.android.app.utils.SharedPreferencesUtil;
 import com.wang.so.love.android.app.view.R;
 
 /**
- * Òýµ¼Ò³
+ * å¼•å¯¼é¡µ
  * 
  * @author HeJIawang
  * @date 2016.11.29
