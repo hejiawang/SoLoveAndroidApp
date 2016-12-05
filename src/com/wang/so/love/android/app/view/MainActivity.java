@@ -21,6 +21,7 @@ public class MainActivity extends BaseActivity {
 	private SlidingMenu mMenu;
 	
 	private Button button_login;
+	private Button button_register;
 	private ImageView tv_one;
 	
 	@Override
@@ -38,6 +39,7 @@ public class MainActivity extends BaseActivity {
 		mMenu = (SlidingMenu) findViewById(R.id.id_menu);
 		
 		button_login = (Button) findViewById(R.id.button_login);
+		button_register = (Button) findViewById(R.id.button_register);
 		tv_one = (ImageView) findViewById(R.id.one);
 		
 		button_login.setOnClickListener(new OnClickListener() {
@@ -45,6 +47,15 @@ public class MainActivity extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(context, LogInActivity.class);
+				startActivity(intent);
+			}
+		});
+		
+		button_register.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(context, RegisterActivity.class);
 				startActivity(intent);
 			}
 		});

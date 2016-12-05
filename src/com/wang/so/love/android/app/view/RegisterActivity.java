@@ -13,6 +13,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.wang.so.love.android.app.BaseActivity;
 import com.wang.so.love.android.app.SoLoveAPP;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -29,27 +30,30 @@ import com.wang.so.love.android.app.utils.ToastUtil;
 import com.wang.so.love.android.app.view.R;
 
 /**
- * 登陆页
+ * 注册页
  * 
  * @author HeJiawang
- * @date 2016.11.29
+ * @date 2016.12.03
  */
-public class LogInActivity extends BaseActivity {
+public class RegisterActivity extends BaseActivity {
 
 	private EditText et_loginName;
 	private EditText et_passWord;
-	private Button bt_login;
+	private EditText et_rePassWord;
+	private Button bt_register;
 	
 	private String loginName;
 	private String passWord;
+	private String rePassWord;
 	
-	private LoginHandler loginHandler;
+	private RegisterHandler registerHandler;
+	
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
+		setContentView(R.layout.activity_register);
 		
 		this.initView();
 	}
@@ -60,28 +64,38 @@ public class LogInActivity extends BaseActivity {
 	private void initView(){
 		et_loginName = (EditText) findViewById(R.id.et_loginName);
 		et_passWord = (EditText) findViewById(R.id.et_passWord);
-		bt_login = (Button) findViewById(R.id.bt_login);
-		
-		loginHandler = new LoginHandler();
-		
-		bt_login.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				loginName = et_loginName.getText().toString().trim();
-				passWord = et_passWord.getText().toString().trim();
-				if( checkLogin() ){
-					loginRequest();
-				}
-			}
-		});
-	}
+		et_rePassWord = (EditText) findViewById(R.id.et_rePassWord);
+		bt_register = (Button) findViewById(R.id.bt_register);
 
+		bt_register.setOnClickListener( new RegisterOnclickListener() );
+
+		registerHandler = new RegisterHandler();
+	}
+	
 	/**
-	 * 验证输入的登陆手机号与密码
+	 * 注册事件
+	 * @author HeJiawang
+	 * @date   2016年12月5日
+	 */
+	class RegisterOnclickListener implements OnClickListener{
+
+		@Override
+		public void onClick(View v) {
+			loginName = et_loginName.getText().toString().trim();
+			passWord = et_passWord.getText().toString().trim();
+			rePassWord = et_rePassWord.getText().toString().trim();
+			
+			if( checkRegister() ){
+				registerRequest();
+			}
+		}
+	}
+	
+	/**
+	 * 校验注册信息的正确性
 	 * @return
 	 */
-	private Boolean checkLogin(){
+	private Boolean checkRegister(){
 		if( StringUtil.isBlank(loginName) ){
 			ToastUtil.show("请输入注册手机号");
 			return false;
@@ -101,22 +115,33 @@ public class LogInActivity extends BaseActivity {
 			ToastUtil.show("请输入6-18位的密码");
 			return false;
 		}
+		
+		if( StringUtil.isBlank(rePassWord) ){
+			ToastUtil.show("请输入重复密码");
+			return false;
+		}
+		
+		if( !passWord.equals(rePassWord) ){
+			ToastUtil.show("两次密码不一致");
+			return false;
+		}
+		
 		return true;
 	}
 	
 	/**
-	 * 登陆请求
+	 * 注册请求
 	 */
-	private void loginRequest(){
+	private void registerRequest(){
 		StringRequest request = new StringRequest(Request.Method.POST,
-				HttpUrlUtil.LOGINURL, 
+				HttpUrlUtil.REGISTERURL, 
 				new Response.Listener<String>() {
 
 			@Override
 			public void onResponse(String response) {
-				LoggerUtil.i("SoLoveRequest", HttpUrlUtil.LOGINURL + " result :"+ response);
-				Message msg = loginHandler.obtainMessage(0, response);
-				loginHandler.sendMessage(msg);
+				LoggerUtil.i("SoLoveRequest", HttpUrlUtil.REGISTERURL + " result :"+ response);
+				Message msg = registerHandler.obtainMessage(0, response);
+				registerHandler.sendMessage(msg);
 			}
 		}, new Response.ErrorListener(){
 
@@ -130,6 +155,7 @@ public class LogInActivity extends BaseActivity {
 				Map<String, String> map = new HashMap<>();
 				map.put("loginName", loginName);
 				map.put("passWord", passWord);
+				map.put("rePassWord", rePassWord);
 				return map;
 			}
 		};
@@ -137,24 +163,34 @@ public class LogInActivity extends BaseActivity {
 	}
 	
 	/**
-	 * 登陆 Handler
+	 * 注册 Handler
 	 * @author HeJiawang
-	 * @date   2016年12月5日
+	 * @date   2016年12月3日
 	 */
-	class LoginHandler extends Handler{
+	class RegisterHandler extends Handler{
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
-			if( msg.what == 0 ){
-				
+			
+			if (msg.what == 0) {
 				try {
 					JSONObject jsonObject;
 					jsonObject = new JSONObject(msg.obj.toString());
 					boolean success = jsonObject.getBoolean("success");
 					if( success ){
-						ToastUtil.show(jsonObject.getString("message") + "success");
+						ToastUtil.show(jsonObject.getString("message"));
+
+						JSONObject userInfoJSON = jsonObject.getJSONObject("result");
+						String userID = userInfoJSON.getString("userID");
+						
+						Intent intent = new Intent();
+						intent.setClass(context, MainActivity.class);
+						Bundle bundle = new Bundle();
+						bundle.putSerializable("userID", userID);
+						startActivity(intent);
+						finish();
 					} else {
-						ToastUtil.show(jsonObject.getString("message") + "error");
+						ToastUtil.show(jsonObject.getString("message"));
 					}
 				} catch (JSONException e) {
 					e.printStackTrace();
