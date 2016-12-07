@@ -24,7 +24,7 @@ import com.wang.so.love.android.app.view.fragment.SettingFragment;
  * @date 2016.11.29
  */
 public class MainActivity extends BaseActivity implements OnClickListener {
-	
+	 
 	/**
 	 * 用于展示消息的Fragment
 	 */
