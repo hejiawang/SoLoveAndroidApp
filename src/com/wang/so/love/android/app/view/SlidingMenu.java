@@ -10,8 +10,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
 import com.nineoldandroids.view.ViewHelper;
+import com.wang.so.love.android.app.utils.LoggerUtil;
 import com.wang.so.love.android.app.utils.ScreenUtils;
-
 import com.wang.so.love.android.app.view.R;
 
 /**
@@ -111,9 +111,11 @@ public class SlidingMenu extends HorizontalScrollView {
 		case MotionEvent.ACTION_UP:
 			int scrollX = getScrollX();
 			if (scrollX > mHalfMenuWidth) {
-				this.smoothScrollTo(mMenuWidth, 0);
+				mHalfMenuWidth = (int) (mMenuWidth / 1.5) ;	//调整灵敏度
+				this.smoothScrollTo(mMenuWidth, 0);	//关闭菜单
 				isOpen = false;
 			} else {
+				mHalfMenuWidth = mMenuWidth / 5;//调整灵敏度
 				this.smoothScrollTo(0, 0);
 				isOpen = true;
 			}
