@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical" >
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:scrollbars="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50dip"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别"
+                    android:textColor="#1b314b"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <RadioGroup 
+			        android:id="@+id/rg_userSex"
+			        android:orientation="horizontal"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content">
+			        <RadioButton 
+			            android:id="@+id/male"
+			            android:checked="true"
+			            android:text="男"/>
+			        <RadioButton
+			            android:id="@+id/female"
+			            android:text="女" />
+			    </RadioGroup>
+            </LinearLayout>
+            
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="年龄"
+	                android:singleLine="true"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userAge"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:numeric="integer"
+	                android:hint="请输入年龄" />
+	        </LinearLayout>
+	        
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="昵称"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userNick"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="请输入昵称" />
+	        </LinearLayout>
+            
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="联系电话"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userPhone"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:numeric="integer"
+	                android:hint="请输入联系电话" />
+	        </LinearLayout>
+	        
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="QQ"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userQQ"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:numeric="integer"
+	                android:hint="请输入QQ" />
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="微信"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userWeixin"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:numeric="integer"
+	                android:hint="请输入微信" />
+	        </LinearLayout>
+	        <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="民族"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userNation"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="请输入民族" />
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="工作"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userWork"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="请输入工作性质、内容" />
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="宗教信仰"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userFaith"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="请输入宗教信仰" />
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="血型"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	             <RadioGroup 
+			        android:id="@+id/rg_userBlood"
+			        android:orientation="horizontal"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content">
+			        <RadioButton 
+			            android:id="@+id/userBlood_A"
+			            android:checked="true"
+			            android:text="A型"/>
+			        <RadioButton
+			            android:id="@+id/userBlood_B"
+			            android:text="B型" />
+			        <RadioButton 
+			            android:id="@+id/userBlood_AB"
+			            android:text="AB型"/>
+			        <RadioButton
+			            android:id="@+id/userBlood_O"
+			            android:text="O型" />
+			    </RadioGroup>
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="身高"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userHeight"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:numeric="integer"
+	                android:hint="请输入身高cm" />
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="体重"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userWeight"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:numeric="integer"
+	                android:hint="请输入体重kg" />
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="150dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="生日"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <DatePicker
+	                android:id="@+id/et_userBirthday"
+	                android:layout_width="fill_parent"
+	                android:layout_height="150dip"
+	                android:calendarViewShown="false"/>
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="自我评价"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userEvaluation"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="请输入自我评价" />
+	        </LinearLayout>
+	        <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="爱情规划"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userLovePlan"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="请输入爱情规划" />
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="其他"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_theNode"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:hint="在补充点什么吧" />
+	        </LinearLayout>
+	        <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="毕业学校"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userSchool"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="请输入毕业学校" />
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="所学专业"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <EditText
+	                android:id="@+id/et_userMagor"
+	                android:layout_width="fill_parent"
+	                android:layout_height="50dip"
+	                android:hint="清输入所学专业" />
+	        </LinearLayout>
+	        <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="学历"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	                <Spinner 
+					    android:layout_width="match_parent"
+					    android:layout_height="wrap_content"
+					    android:id="@+id/sp_userEducation"
+					    android:entries="@array/spingarr_education" />
+	        </LinearLayout>
+	        <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="月收入"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	            <Spinner
+                    android:id="@+id/sp_userIncomeLevel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/spingarr_incomeLevel" />
+
+	        </LinearLayout>
+	        <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="婚姻状况"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <RadioGroup 
+			        android:id="@+id/rg_userMaritalStatus"
+			        android:orientation="horizontal"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content">
+			        <RadioButton 
+			            android:id="@+id/userMaritalStatus_unmarried"
+			            android:checked="true"
+			            android:text="未婚"/>
+			        <RadioButton
+			            android:id="@+id/userMaritalStatus_remarried"
+			            android:text="离异" />
+			        <RadioButton 
+			            android:id="@+id/userMaritalStatus_other"
+			            android:text="其他"/>
+			    </RadioGroup>
+	        </LinearLayout>
+            <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="购车情况"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <RadioGroup 
+			        android:id="@+id/rg_userHaveCar"
+			        android:orientation="horizontal"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content">
+			        <RadioButton 
+			            android:id="@+id/userHaveCar_no"
+			            android:checked="true"
+			            android:text="绿色出行"/>
+			        <RadioButton
+			            android:id="@+id/userHaveCar_yes"
+			            android:text="奔驰宝马" />
+			    </RadioGroup>
+	        </LinearLayout>
+	        <LinearLayout
+	            android:layout_width="fill_parent"
+	            android:layout_height="50dip"
+	            android:gravity="center"
+	            android:orientation="horizontal" >
+	
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="购房情况"
+	                android:textColor="#1b314b"
+	                android:textSize="20dp"
+	                android:textStyle="bold" />
+	
+	            <RadioGroup 
+			        android:id="@+id/rg_userHaveHome"
+			        android:orientation="horizontal"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content">
+			        <RadioButton 
+			            android:id="@+id/userHaveHome_no"
+			            android:checked="true"
+			            android:text="四海为家"/>
+			        <RadioButton
+			            android:id="@+id/userHaveHome_yes"
+			            android:text="高楼别墅" />
+			    </RadioGroup>
+	        </LinearLayout>
+            
+	        <EditText
+			    android:id="@+id/add_content"
+			    android:layout_width="fill_parent"
+			    android:layout_height="wrap_content"
+			    android:enabled="true"
+			    android:gravity="top"
+			    android:inputType="textMultiLine"
+			    android:minLines="8"
+			    android:maxLines="10"
+			    android:hint="清输入所学专业"
+			    android:scrollbars="vertical" 
+			    android:background="@android:drawable/edit_text" 
+			    >
+			</EditText>
+        </LinearLayout>
+        
+    </HorizontalScrollView>
+
+</ScrollView>
