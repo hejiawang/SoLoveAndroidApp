@@ -16,6 +16,6 @@ public class ContactsFragment extends Fragment {
 		View contactsLayout = inflater.inflate(R.layout.alluser_layout,
 				container, false);
 		return contactsLayout;
-	}
+	} 
 
 }
