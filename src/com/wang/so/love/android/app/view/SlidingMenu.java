@@ -111,11 +111,11 @@ public class SlidingMenu extends HorizontalScrollView {
 		case MotionEvent.ACTION_UP:
 			int scrollX = getScrollX();
 			if (scrollX > mHalfMenuWidth) {
-				mHalfMenuWidth = (int) (mMenuWidth / 1.5) ;	//调整灵敏度
+				mHalfMenuWidth = mMenuWidth -1;//(int) (mMenuWidth / 1.5) ;	//调整灵敏度
 				this.smoothScrollTo(mMenuWidth, 0);	//关闭菜单
 				isOpen = false;
 			} else {
-				mHalfMenuWidth = mMenuWidth / 5;//调整灵敏度
+				mHalfMenuWidth = mMenuWidth / 8;//调整灵敏度
 				this.smoothScrollTo(0, 0);
 				isOpen = true;
 			}

@@ -4,9 +4,9 @@
     android:layout_height="match_parent"
     android:scrollbars="vertical" >
 
-    <HorizontalScrollView
+    <!-- <HorizontalScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content" > -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -310,7 +310,7 @@
 	        </LinearLayout>
             <LinearLayout
 	            android:layout_width="fill_parent"
-	            android:layout_height="50dip"
+	            android:layout_height="wrap_content"
 	            android:gravity="center"
 	            android:orientation="horizontal" >
 	
@@ -323,14 +323,21 @@
 	                android:textStyle="bold" />
 	
 	            <EditText
-	                android:id="@+id/et_userEvaluation"
-	                android:layout_width="fill_parent"
-	                android:layout_height="50dip"
-	                android:hint="请输入自我评价" />
+				    android:id="@+id/et_userEvaluation"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:enabled="true"
+				    android:gravity="top"
+				    android:inputType="textMultiLine"
+				    android:minLines="8"
+				    android:maxLines="10"
+				    android:hint="请输入自我评价"
+				    android:scrollbars="vertical" 
+				    android:background="@android:drawable/edit_text" />
 	        </LinearLayout>
 	        <LinearLayout
 	            android:layout_width="fill_parent"
-	            android:layout_height="50dip"
+	            android:layout_height="wrap_content"
 	            android:gravity="center"
 	            android:orientation="horizontal" >
 	
@@ -342,31 +349,45 @@
 	                android:textSize="20dp"
 	                android:textStyle="bold" />
 	
-	            <EditText
-	                android:id="@+id/et_userLovePlan"
-	                android:layout_width="fill_parent"
-	                android:layout_height="50dip"
-	                android:hint="请输入爱情规划" />
+	             <EditText
+				    android:id="@+id/et_userLovePlan"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:enabled="true"
+				    android:gravity="top"
+				    android:inputType="textMultiLine"
+				    android:minLines="8"
+				    android:maxLines="10"
+				    android:hint="请输入爱情规划"
+				    android:scrollbars="vertical" 
+				    android:background="@android:drawable/edit_text" />
 	        </LinearLayout>
             <LinearLayout
 	            android:layout_width="fill_parent"
-	            android:layout_height="50dip"
+	            android:layout_height="wrap_content"
 	            android:gravity="center"
 	            android:orientation="horizontal" >
 	
 	            <TextView
 	                android:layout_width="wrap_content"
 	                android:layout_height="wrap_content"
-	                android:text="其他"
+	                android:text="其他:"
 	                android:textColor="#1b314b"
 	                android:textSize="20dp"
 	                android:textStyle="bold" />
 	
 	            <EditText
-	                android:id="@+id/et_theNode"
-	                android:layout_width="fill_parent"
-	                android:layout_height="wrap_content"
-	                android:hint="在补充点什么吧" />
+				    android:id="@+id/et_theNode"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:enabled="true"
+				    android:gravity="top"
+				    android:inputType="textMultiLine"
+				    android:minLines="8"
+				    android:maxLines="10"
+				    android:hint="在补充点什么吧"
+				    android:scrollbars="vertical" 
+				    android:background="@android:drawable/edit_text" />
 	        </LinearLayout>
 	        <LinearLayout
 	            android:layout_width="fill_parent"
@@ -536,22 +557,8 @@
 			    </RadioGroup>
 	        </LinearLayout>
             
-	        <EditText
-			    android:id="@+id/add_content"
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:enabled="true"
-			    android:gravity="top"
-			    android:inputType="textMultiLine"
-			    android:minLines="8"
-			    android:maxLines="10"
-			    android:hint="清输入所学专业"
-			    android:scrollbars="vertical" 
-			    android:background="@android:drawable/edit_text" 
-			    >
-			</EditText>
         </LinearLayout>
         
-    </HorizontalScrollView>
+   <!--  </HorizontalScrollView> -->
 
 </ScrollView>
