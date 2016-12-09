@@ -10,6 +10,12 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    
     <application
         android:name="com.wang.so.love.android.app.SoLoveAPP"
         android:allowBackup="true"
@@ -31,6 +37,12 @@
         <activity android:name=".RegisterActivity" android:screenOrientation="portrait" />
         <activity android:name=".GuidanceActivity" android:screenOrientation="portrait" />
         <activity android:name=".UserDetailModifyActivity" android:screenOrientation="portrait" />
+        
+        <activity android:name="com.wang.so.love.android.app.view.photo.AlbumActivity"  android:screenOrientation="portrait"/>
+        <activity android:name="com.wang.so.love.android.app.view.photo.GalleryActivity"  />
+        <activity android:name="com.wang.so.love.android.app.view.photo.ImageFile" />
+        <activity android:name="com.wang.so.love.android.app.view.photo.ShowAllPhoto"  />
+        
     </application>
 
 </manifest>
